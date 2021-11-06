@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600;800&display=swap" rel="stylesheet">
+        <link href="jquery/jquery-ui.min.css" rel="stylesheet">
+        <link href="jquery/jquery-ui.structure.min.css" rel="stylesheet">
+        <link href="jquery/jquery-ui.theme.min.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <script src="jquery/external/jquery/jquery.js"></script>
+        <script src="jquery/jquery-ui.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+        <script src="scripts.js"></script>
+    </head>
+    <body>
+        <a href="#main" id="skip">Skip to Main Content</a>
+<header>
+    <svg viewBox="0 0 833 347" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_3:14)">
+        <line x1="201.534" y1="333.975" x2="674.893" y2="-20.5457" stroke="#556964" stroke-width="125"/>
+        <path d="M245 -43L81 168.561L245 392" stroke="#1D3933" stroke-width="125"/>
+        <path d="M588 -43L752 168.561L588 392" stroke="#1D3933" stroke-width="125"/>
+        </g>
+        <defs>
+        <clipPath id="clip0_3:14">
+        <rect width="833" height="347" fill="white"/>
+        </clipPath>
+        </defs>
+    </svg>
+	<nav>
+		<h2 class="sr-only">Main Navigation</h2>
+		<ul>
+			<li><a href="#about">About</a></li>
+			<li><a href="#work">Work</a></li>
+			<li><a href="#play">Play</a></li>
+		</ul>
+	</nav>
+    <h1>Fake Developer Name</h1>
+    <p>design, develop, debug</p>
+</header>
+
+<main id="main">
+	<section id="about">
+        <h2></h2>
+    </section>
+    <section id="work">
+        <h2></h2>
+    </section>
+    <section id="play">
+        <h2>don't like my site colors? choose new ones!</h2>
+        <section id="viewColors">
+            <h3 class="sr-only">The Current Site Colors</h3>
+            <div id="color1">#1</div>
+            <div id="color2">#2</div>
+            <div id="color3">#3</div>
+            <div id="color4">#4</div>
+            <div id="color5">#5</div>
+        </section>
+        <section id="colorSelector">
+            <h3 class="sr-only">Choose New Site Colors</h3>
+            <p>check the box next to the color you want to change, use the sliders to see a new color, then click "change color" to see your new color on the page in place of the original</p>
+            <form>
+                <fieldset>
+                    <legend>which color would you like to change?</legend>
+                    <input type="radio" name="colors" id="colorRadio1"
+                    checked required>
+                    <label for="colorRadio1">color #1</label>
+                    <input type="radio" name="colors" id="colorRadio2" required>
+                    <label for="colorRadio2">color #2</label>
+                    <input type="radio" name="colors" id="colorRadio3" required>
+                    <label for="colorRadio3">color #3</label>
+                    <input type="radio" name="colors" id="colorRadio4" required>
+                    <label for="colorRadio4">color #4</label>
+                    <input type="radio" name="colors" id="colorRadio5" required>
+                    <label for="colorRadio5">color #5</label>
+                </fieldset>
+                <div id="sliders">
+                    <label for="red" class="sr-only">red</label>
+                    <!-- <input type="range" id="red" name="red" min="0" max="255" steps="1"> -->
+                    <div id="red"></div>
+                    <label for="green" class="sr-only">green</label>
+                    <!-- <input type="range" id="green" name="green" min="0" max="255" steps="1"> -->
+                    <div id="blue"></div>
+                    <label for="blue" class="sr-only">blue</label>
+                    <!-- <input type="range" id="blue" name="blue" min="0" max="255" steps="1"> -->
+                    <div id="green"></div>
+                </div>
+                <div id="swatch"></div>
+                <button id="changeColor">change color</button>
+            </form>
+        </section>
+    </section>
+</main>
+
+<footer>
+	
+</footer>
+    </body>
+</html>

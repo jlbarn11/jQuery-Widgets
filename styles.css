@@ -1,0 +1,398 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ---------------- GLOBAL/SMALL SCREEN SIZES --------------- */
+
+:root{
+	--white: #FCFAF8;
+	--cream: #EEE1D6;
+	--dark-green: #1D3933;
+	--light-green: #556964;
+	--orange: #DA572F;
+    --red: #D14934;
+    --green: #2FA140;
+    --blue: #018CDB;
+    --light-gray: #eaeaea;
+    --med-gray: #555;
+    --dark-gray: #222;
+	--fonts: 'Prompt', sans-serif;
+    --small-shadow: 3px 3px 6px var(--med-gray);
+    --spread-shadow: 6px 6px 10px var(--med-gray);
+	font-size: 16px;
+}
+
+body{
+    box-sizing: border-box;
+    background-color: #fff;
+    background-image:
+        linear-gradient(90deg, transparent 79px, var(--light-gray) 79px, var(--light-gray) 81px, transparent 81px),
+        linear-gradient(#eee .1em, transparent .1em);
+    background-size: 100% 1.2em;
+    color: var(--dark-gray);
+}
+
+/* from: https://webaim.org/techniques/css/invisiblecontent/ */
+#skip{
+	position: absolute;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+ 
+#skip:focus{
+	position: static;
+	width: auto;
+	height: auto;
+}
+
+header, main, footer{
+	line-height: 1.5;
+	font-family: var(--fonts);
+    background-image: url("images/concrete-wall.png");
+}
+
+header{
+    padding: 1rem;
+}
+
+header svg{
+    width: 100%;
+}
+
+h1, h2, h3, h4{
+    font-family: var(--fonts);
+    font-weight: 800;    
+    color: var(--dark-green);
+}
+
+h1{
+    font-size: 3rem;
+    text-align: center;
+    margin: -1rem 0;
+}
+
+h2{
+    font-size: 2rem;
+}
+
+h3, h4{
+    font-size: 2rem;
+}
+
+p{
+    padding: 1rem;
+    max-width: 75ch;
+    margin: 1rem auto;
+}
+
+header p{
+    font-size: 1.1rem;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav{
+    width: 100%;
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+a{
+    display: block;
+    padding: 2rem;
+}
+
+a:hover{
+
+}
+
+a:focus{
+
+}
+
+nav a{
+    font-size: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    color: var(--dark-green);
+}
+
+nav a:hover{
+
+}
+
+main{
+
+}
+
+section{
+    padding: 1rem;
+}
+
+#play{
+    font-size: 2rem;
+}
+
+#play p{
+    margin: 0 auto;
+    padding: 0;
+}
+
+#viewColors{
+    width: 100%;
+    max-width: 664px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+#color1, #color2, #color3, #color4, #color5{
+    width: 80px;
+    height: 65px;
+    padding: 25px 20px 20px 20px;
+    box-shadow: var(--small-shadow);
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+#color1{
+    background-color: var(--white);
+}
+
+#color2{
+    background-color: var(--cream);
+}
+
+#color3{
+    background-color: var(--light-green);
+    color: var(--white);
+}
+
+#color4{
+    background-color: var(--dark-green);
+    color: var(--white);
+}
+
+#color5{
+    background-color: var(--orange);
+    color: var(--white);
+}
+
+form{
+    font-family: var(--fonts);
+}
+
+legend{
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.ui-widget{
+    font-family: var(--fonts);
+    font-size: 2.5rem;
+}
+
+.ui-button{
+    padding: 0 1rem;
+}
+
+#red .ui-slider-range{
+    background-color: var(--red);
+}
+
+#red{
+    margin: 2rem 1rem;
+    width: 90%;
+}
+
+#blue .ui-slider-range{
+    background-color: var(--blue);
+}
+
+#blue{
+    margin: 2rem 1rem;
+    width: 90%;
+}
+
+#green .ui-slider-range{
+    background-color: var(--green);
+}
+
+#green{
+    margin: 2rem 1rem;
+    width: 90%;
+}
+
+#swatch{
+    width: 100px;
+    height: 100px;
+    box-shadow: var(--small-shadow);
+    margin: 0 auto;
+}
+
+#changeColor{
+    display: block;
+    font-family: var(--fonts);
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin: 1rem;
+    padding: 0 1.5rem;
+    background-color: var(--dark-green);
+    color: var(--white);
+    border: none;
+    outline: none;
+    box-shadow: var(--small-shadow);
+}
+
+#changeColor:hover{
+    box-shadow: var(--spread-shadow);
+    background-color: var(--light-green);
+}
+
+footer{
+    background-color: var(--dark-green);
+    padding: 2rem;
+}
+
+/* from: https://webaim.org/techniques/css/invisiblecontent/ */
+.sr-only {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+
+/* ---------------- MEDIUM SCREEN SIZES --------------- */
+
+
+/* ---------------- LARGE SCREEN SIZES --------------- */
+@media screen and (min-width: 1000px){
+    header{
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        align-items: center;
+    }
+
+    h1{
+        font-size: 10rem;
+        margin: -2rem 0;
+    }
+
+    h1 span{
+        display: inline-block;
+        height: 6rem;
+    }
+
+    h1, header p{
+        grid-column: 1/-1;
+    }
+
+    header p{
+        font-size: 4rem;
+        margin-top: -2rem
+    }
+
+    nav{
+        margin: 0;
+        justify-self: end;
+    }
+
+    nav ul{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0.5rem;
+    }
+
+    nav a{
+        font-size: 4rem;
+    }
+
+    form{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 1rem;
+    }
+
+    fieldset, button{
+        grid-column: 1/-1;
+    }
+
+    fieldset{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        gap: 1rem;
+        width: 80%;
+        margin: 1rem auto;
+    }
+
+    legend{
+        grid-column: 1/-1;
+        margin-left: -5rem;
+    }
+
+    #swatch{
+        width: 200px;
+        height: 200px;
+    }
+
+    #changeColor{
+        margin-right: 5rem;
+        justify-self: end;
+    }
+}
