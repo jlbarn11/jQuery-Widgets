@@ -161,6 +161,7 @@ a:focus{
 
 nav a{
     font-size: 1.5rem;
+    font-weight: 600;
     text-align: center;
     text-decoration: none;
     color: var(--dark-green);
@@ -330,13 +331,8 @@ footer{
     }
 
     h1{
-        font-size: 10rem;
-        margin: -2rem 0;
-    }
-
-    h1 span{
-        display: inline-block;
-        height: 6rem;
+        font-size: 5rem;
+        margin: 2rem 0 0 0;
     }
 
     h1, header p{
@@ -344,8 +340,7 @@ footer{
     }
 
     header p{
-        font-size: 4rem;
-        margin-top: -2rem
+        font-size: 2rem;
     }
 
     nav{
@@ -357,10 +352,6 @@ footer{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 0.5rem;
-    }
-
-    nav a{
-        font-size: 4rem;
     }
 
     form{
