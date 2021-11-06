@@ -22,9 +22,12 @@ $( function() {
     //variable to hold the document root to allow us to edit the CSS on the page later with variables
     let root = document.documentElement;
 
+    //variable to hold the nex code
+    let hex = "";
+
     //translates the RGB values from the sliders to hex values
     function hexFromRGB(r, g, b) {
-      var hex = [
+      hex = [
         r.toString( 16 ),
         g.toString( 16 ),
         b.toString( 16 )
@@ -64,6 +67,17 @@ $( function() {
     //event handler to swap page color on form submit/button click
     $("#changeColor").on("click", function(e){
         e.preventDefault();
-        
+        //figure out which of the colors the user wants to change
+        let currentColor = $("input[type=radio]:checked").attr('id');
+        console.log(currentColor);
+
+        //convert the current color into one that looks like the variable name int the stylesheet
+        let colorToChange = `--${currentColor}`;
+        console.log(colorToChange);
+        let newColor = `#${hex[0]}${hex[1]}${hex[2]}`;
+        console.log(newColor);
+
+        //use hex value chosen by the user for the color, and set it in the root of the CSS
+        root.style.setProperty(colorToChange, newColor);
     });
 } );
