@@ -151,11 +151,9 @@ header p{
     grid-column: 1/-1;
 }
 
-/* nav{
-    width: 100%;
-    max-width: 550px;
-    margin: 0 auto;
-} */
+nav{
+    justify-self: end;
+}
 
 #menuToggle {
 	display: block;
@@ -199,7 +197,7 @@ header p{
 	display: block;
 	width: 3rem;
 	height: 3rem;
-    margin-left: 55%;
+    margin-right: 2rem;
 }
 
 #menuToggle label span {
@@ -263,7 +261,7 @@ a:focus{
 
 }
 
-nav a{
+#menuToggle a{
     font-size: 1.35rem;
     font-weight: 600;
     text-align: center;
@@ -271,7 +269,7 @@ nav a{
     color: var(--dark-green);
 }
 
-nav a:hover{
+#menuToggle a:hover{
     background-color: var(--dark-green);
     color: var(--white);
     border-radius: 3rem;
@@ -634,6 +632,10 @@ footer i{
         padding: 2rem;
     }
 
+    header svg{
+        width: 200px;
+    }
+
     h1{
         font-size: 5rem;
         margin: 2rem 0 0 0;
@@ -647,19 +649,35 @@ footer i{
         font-size: 2rem;
     }
 
+    #menuToggle{
+        position: static;
+        width: 100%;
+    }
+
+	#menuToggle input, #menuToggle label{
+		display: none;
+	}
+
     nav{
         margin: 0;
-        justify-self: end;
+        background-color: transparent;
     }
 
     #menu{
+        position: static;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 0.5rem;
+        padding: 0;
+        margin: 1rem 0;
+        width: 100%;
+        background-color: transparent;
     }
 
-    nav a{
+    #menuToggle a{
         font-size: 2rem;
+        background-color: transparent;
+        padding: 1rem;
     }
 
     #about{
