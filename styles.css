@@ -101,12 +101,16 @@ header, main, footer{
 }
 
 header{
-    padding: 1rem;
     border-bottom: 3px dashed var(--orange);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 header svg{
-    width: 100%;
+    display: block;
+    width: 100px;
+    padding: 1rem;
+    margin: 0 auto;
 }
 
 h1, h2, h3, h4{
@@ -119,6 +123,8 @@ h1{
     font-size: 3rem;
     text-align: center;
     margin: 1rem 0;
+    padding: 0.5rem;
+    grid-column: 1/-1;
 }
 
 h2{
@@ -140,14 +146,108 @@ p{
 header p{
     font-size: 1.1rem;
     margin: 0;
-    padding: 0;
+    padding: 0 0 2rem 0;
     text-align: center;
+    grid-column: 1/-1;
 }
 
-nav{
+/* nav{
     width: 100%;
     max-width: 550px;
     margin: 0 auto;
+} */
+
+#menuToggle {
+	display: block;
+	position: relative;
+	z-index: 1; 
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	 -ms-user-select: none;
+		 user-select: none;
+}
+
+#menuToggle a {
+	text-decoration: none;
+	-webkit-transition: background-color 0.3s ease;
+	-o-transition: background-color 0.3s ease;
+	transition: background-color 0.3s ease;
+	background-color: var(--white);
+	display: block;
+	padding: 1rem;
+	width: calc(100% - 2rem);
+	text-align: center;
+}
+
+/* The hamburger button hidden inside an input element */
+#menuToggle input {
+	display: block;
+	width: 3rem;
+	height: 3rem;
+	position: absolute;
+	top: 10px;
+	left: -8px;  
+	padding: 0;
+	cursor: pointer;  
+	opacity: 0; /* hide this */
+	z-index: 2; /* and place it over the hamburger */  
+	-webkit-touch-callout: none;
+}
+
+#menuToggle label {
+	position: relative;
+	display: block;
+	width: 3rem;
+	height: 3rem;
+    margin-left: 55%;
+}
+
+#menuToggle label span {
+	display: block;
+	width: 3rem;
+	height: 3rem;
+	position: relative;
+	z-index: 1;  
+	-webkit-transform-origin: 4px 0px;  
+		-ms-transform-origin: 4px 0px;  
+			transform-origin: 4px 0px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+#menuIcon{
+	font-family: "Anicons Regular", sans-serif;
+	font-variation-settings: "TIME" 1;
+	font-size: 3rem;
+	color: var(--dark-green);
+	transition: font-variation-settings 0.4s ease;
+}
+
+#menuToggle input:checked + label span {
+	font-variation-settings: "TIME" 100;
+}
+
+/*
+ * Use absolute positioning to place the menu off-screen
+ */
+#menu{
+	position: absolute;
+	width: 100vw;
+	margin-top: -6rem;
+	padding: 6rem 0 3rem 0;
+	background-color: var(--white);
+	right: 100vw;
+	-webkit-transition: right 0.3s ease;
+	-o-transition: right 0.3s ease;
+	transition: right 0.3s ease; 
+}
+
+/*
+* Slide the menu in from left when the input is checked
+*/
+#menuToggle input:checked ~ ul {
+	right: -1rem;
 }
 
 a{
@@ -229,15 +329,23 @@ img{
 
 .ui-tabs .ui-tabs-nav {
     border-radius: 2rem;
-    padding: 0.5rem
+    padding: 0.5rem;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active{
+    margin: 0.5rem 15%;
 }
 
 .ui-tabs .ui-tabs-nav li{
     border-radius: 2rem;
+    margin: 0.5rem 15%;
 }
 
 #play{
     font-size: 1.1rem;
+    padding: 1rem 1rem 3rem 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 #play p{
@@ -248,9 +356,10 @@ img{
 #viewColors{
     width: 100%;
     max-width: 664px;
-    margin: 0 auto;
+    margin: 2rem auto;
+    padding: 0;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 1rem;
 }
 
@@ -264,6 +373,7 @@ img{
     font-size: 1.5rem;
     font-weight: 800;
     border-radius: 0.25rem;
+    margin: 0 auto;
 }
 
 #viewColors span{
@@ -319,6 +429,7 @@ legend{
 .ui-widget.ui-button{
     background-color: var(--dark-green);
     color: var(--white);
+    margin: 0.5rem 0.25rem;
 }
 
 .ui-widget.ui-checkboxradio-checked{
@@ -341,13 +452,17 @@ legend{
     margin-left: -1.5rem;
 }
 
+#colorSelector{
+    padding: 0;
+}
+
 #red .ui-slider-range{
     background-color: var(--red);
     border-radius: 2rem 0 0 2rem; 
 }
 
 #red{
-    margin: 2rem 1rem;
+    margin: 2rem auto;
     width: 90%;
 }
 
@@ -357,7 +472,7 @@ legend{
 }
 
 #blue{
-    margin: 2rem 1rem;
+    margin: 2rem auto;
     width: 90%;
 }
 
@@ -367,7 +482,7 @@ legend{
 }
 
 #green{
-    margin: 2rem 1rem;
+    margin: 2rem auto;
     width: 90%;
 }
 
@@ -384,7 +499,7 @@ legend{
     font-family: var(--fonts);
     font-weight: 600;
     font-size: 1.5rem;
-    margin: 1rem;
+    margin: 2rem auto;
     padding: 1rem;
     background-color: var(--dark-green);
     color: var(--white);
@@ -402,7 +517,39 @@ legend{
 footer{
     background-color: var(--dark-green);
     color: var(--white);
-    padding: 2rem;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    align-items: center;
+    text-align: center;
+}
+
+footer section{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5rem;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+footer p{
+    padding: 1rem 0 0 1rem;
+    margin: 0;
+}
+
+footer a{
+    color: var(--white);
+    display: block;
+    padding: 0.5rem;
+}
+
+footer a:hover{
+    color: var(--orange);
+}
+
+footer i{
+    font-size: 3rem;
 }
 
 /* from: https://webaim.org/techniques/css/invisiblecontent/ */
@@ -417,7 +564,66 @@ footer{
 
 
 /* ---------------- MEDIUM SCREEN SIZES --------------- */
+@media screen and (min-width: 600px){
+    header{
+        padding: 1rem;
+    }
 
+    header svg{
+        width: 80%;
+    }
+
+    #about div{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin: 2rem auto;
+    }
+
+    .ui-tabs .ui-tabs-nav li{
+        margin: 0;
+    }
+
+    .ui-tabs .ui-tabs-nav li.ui-tabs-active{
+        margin: 0;
+    }
+
+    #viewColors{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        gap: 1rem;
+    }
+
+    form{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 1rem;
+        align-items: center;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    fieldset, button{
+        grid-column: 1/-1;
+    }
+
+    fieldset{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        gap: 1rem;
+        width: 80%;
+        margin: 1rem auto;
+    }
+
+    legend{
+        grid-column: 1/-1;
+    }
+
+    #changeColor{
+        margin: 0;
+        justify-self: end;
+    }
+}
 
 /* ---------------- LARGE SCREEN SIZES --------------- */
 @media screen and (min-width: 1000px){
@@ -446,7 +652,7 @@ footer{
         justify-self: end;
     }
 
-    nav ul{
+    #menu{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 0.5rem;
@@ -462,28 +668,11 @@ footer{
         gap: 1rem;
     }
 
-    form{
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        gap: 1rem;
-        max-width: 1000px;
-        margin: 0 auto;
-    }
-
-    fieldset, button{
-        grid-column: 1/-1;
-    }
-
-    fieldset{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        gap: 1rem;
-        width: 80%;
-        margin: 1rem auto;
+    #about div{
+        display: block;
     }
 
     legend{
-        grid-column: 1/-1;
         margin-left: -5rem;
     }
 
@@ -494,6 +683,9 @@ footer{
 
     #changeColor{
         margin-right: 4rem;
-        justify-self: end;
+    }
+
+    footer p{
+        padding: 0;
     }
 }
