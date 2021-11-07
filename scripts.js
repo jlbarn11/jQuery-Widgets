@@ -10,6 +10,7 @@ new ScrollMagic.Scene({
 	.setPin('#my-sticky-element') // pins the element for the the scene's duration
 	.addTo(controller); // assign the scene to the controller
 
+
 //creates jQuery elements on page load
 $( function() {
   //adds the accordion styles/jQuery to the page
@@ -23,12 +24,6 @@ $( function() {
   });
 } );
 
-//customize the radio buttons in the form with jQuery
-// $( function() {
-//     $( "input[type=radio]" ).checkboxradio({
-//       icon: false
-//     });
-// } );
 
 //for the color slider section
 $( function() {
