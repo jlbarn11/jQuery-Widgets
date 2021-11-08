@@ -71,12 +71,13 @@ table {
 
 body{
     box-sizing: border-box;
-    background-color: #fff;
+    /* background-color: #fff;
     background-image:
         linear-gradient(90deg, transparent 79px, var(--light-gray) 79px, var(--light-gray) 81px, transparent 81px),
         linear-gradient(#eee .1em, transparent .1em);
-    background-size: 100% 1.2em;
+    background-size: 100% 1.2em; */
     color: var(--dark-gray);
+    background-image: url("images/concrete-wall.png");
 }
 
 /* from: https://webaim.org/techniques/css/invisiblecontent/ */
@@ -98,7 +99,6 @@ body{
 header, main, footer{
 	line-height: 1.5;
 	font-family: var(--fonts);
-    background-image: url("images/concrete-wall.png");
 }
 
 header{
@@ -455,6 +455,7 @@ img{
 
 form{
     font-family: var(--fonts);
+    background-color: transparent;
 }
 
 fieldset{
@@ -830,11 +831,6 @@ footer i{
     /* styles to help with the scrolling plugin */
     #about, #work, #play{
         margin-bottom: 70rem;
-        background-color: #fff;
-        background-image:
-            linear-gradient(90deg, transparent 79px, var(--light-gray) 79px, var(--light-gray) 81px, transparent 81px),
-            linear-gradient(#eee .1em, transparent .1em);
-        background-size: 100% 1.2em;
     }
 
     #about{
