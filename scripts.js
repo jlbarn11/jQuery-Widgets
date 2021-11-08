@@ -17,7 +17,7 @@ $( function() {
   let controller = new ScrollMagic.Controller({
     globalSceneOptions: {
       triggerHook: 'onLeave',
-      duration: "150%"
+      duration: "100%"
     }
   });
 
