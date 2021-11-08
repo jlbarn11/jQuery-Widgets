@@ -4,7 +4,7 @@ $( function() {
   $( "#jobHistory" ).accordion();
 
   //create the tabs in the portfolio section
-  $( "#portfolio" ).tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
+  $( "#portfolio" ).tabs({ heightStyle: "content" }).addClass( "ui-tabs-vertical ui-helper-clearfix" );
     $( "#portfolio li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
 
   //customize the radio buttons in the form with jQuery
@@ -28,8 +28,7 @@ $( function() {
     //create a scene for each panel/section
     for(let i = 0; i < sections.length; i++){
       new ScrollMagic.Scene({
-        triggerElement: sections[i],
-        duration: 400
+        triggerElement: sections[i]
       })
       .setPin(sections[i], {pushFollowers: false})
       .addTo(controller);
