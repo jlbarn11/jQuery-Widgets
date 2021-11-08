@@ -16,7 +16,7 @@ $( function() {
   //adds the accordion styles/jQuery to the page
   $( "#jobHistory" ).accordion();
   //create the tabs in the portfolio section
-  $( "#portfolio" ).tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
+  $( "#portfolio" ).tabs({ heightstyle: "auto" }).addClass( "ui-tabs-vertical ui-helper-clearfix" );
     $( "#portfolio li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
   //customize the radio buttons in the form with jQuery
   $( "input[type=radio]" ).checkboxradio({

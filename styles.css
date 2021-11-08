@@ -55,6 +55,7 @@ table {
 	--dark-green: #1D3933;
 	--light-green: #556964;
 	--orange: #DA572F;
+    --transparent-orange: #da572fcc;
     --red: #D14934;
     --green: #2FA140;
     --blue: #018CDB;
@@ -141,6 +142,7 @@ p{
     padding: 1rem;
     max-width: 75ch;
     margin: 1rem auto;
+    font-weight: 400;
 }
 
 header p{
@@ -245,20 +247,12 @@ nav{
 * Slide the menu in from left when the input is checked
 */
 #menuToggle input:checked ~ ul {
-	right: -1rem;
+	right: 0;
 }
 
 a{
     display: block;
     padding: 1rem;
-}
-
-a:hover{
-
-}
-
-a:focus{
-
 }
 
 #menuToggle a{
@@ -267,6 +261,8 @@ a:focus{
     text-align: center;
     text-decoration: none;
     color: var(--dark-green);
+    width: 200px;
+    margin: 0.75rem auto;
 }
 
 #menuToggle a:hover{
@@ -274,10 +270,6 @@ a:focus{
     color: var(--white);
     border-radius: 3rem;
     box-shadow: var(--spread-shadow);
-}
-
-main{
-
 }
 
 section{
@@ -298,19 +290,53 @@ img{
      margin: 0 auto;
 }
 
+#about p{
+    padding: 0;
+    font-weight: 400;
+}
+
+#about a{
+    background-color: var(--orange);
+    color: var(--white);
+    text-align: center;
+    border-radius: 3rem;
+    box-shadow: var(--small-shadow);
+    margin: 1rem auto 2rem auto;
+}
+
+#about a:hover{
+    box-shadow: var(--spread-shadow);
+    background-color: var(--transparent-orange);
+}
+
 #about img{
     width: 100%;
     max-width: 512px;
     margin: 0 auto;
 }
 
-#job-history{
+#about ul{
+    list-style-type: circle;
+    font-weight: 400;
+    padding-left: 2rem;
+}
+
+#jobHistory{
     padding: 0.5rem;
+    width: 95%;
+    margin: 2rem auto;
+    border: 1px solid var(--dark-green);
+}
+
+.dates{
+    text-align: right;
 }
 
 .ui-accordion .ui-accordion-header {
     border-radius: 2rem;
     border: none;
+    letter-spacing: 1px;
+    font-weight: 600;
 }
 
 .ui-state-active{
@@ -325,9 +351,14 @@ img{
     margin: 0 auto;
 }
 
-.ui-tabs .ui-tabs-nav {
+.ui-tabs .ui-tabs-nav{
     border-radius: 2rem;
     padding: 0.5rem;
+}
+
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor, .ui-state-default{
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
 .ui-tabs .ui-tabs-nav li.ui-tabs-active{
@@ -413,6 +444,7 @@ legend{
     font-weight: bold;
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    color: var(--dark-green);
 }
 
 .ui-widget{
@@ -437,6 +469,14 @@ legend{
 
 .ui-button.ui-state-active:hover{
     box-shadow: var(--spread-shadow);
+    border: none;
+    font-weight: 600;
+}
+
+form .ui-button:hover{
+    box-shadow: var(--spread-shadow);
+    border: none;
+    font-weight: 600;
 }
 
 .ui-widget.ui-widget-content {
@@ -571,6 +611,15 @@ footer i{
         width: 80%;
     }
 
+    header p{
+        text-align: center;
+        max-width: 100%;
+    }
+
+    #menuToggle input:checked ~ ul {
+        right: -1rem;
+    }
+
     #about div{
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -579,11 +628,28 @@ footer i{
     }
 
     .ui-tabs .ui-tabs-nav li{
-        margin: 0;
+        margin: 0 0.5rem;
     }
 
     .ui-tabs .ui-tabs-nav li.ui-tabs-active{
+        margin: 0 0.5rem;
+    }
+
+    .ui-tabs .ui-tabs-panel {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .ui-tabs .ui-tabs-panel h3{
+        grid-column: 1/-1;
         margin: 0;
+    }
+
+    .ui-tabs .ui-tabs-panel p{
+        margin: 0;
+        padding: 0;
     }
 
     #viewColors{
@@ -633,7 +699,8 @@ footer i{
     }
 
     header svg{
-        width: 200px;
+        min-width: 200px;
+        max-width: 300px;
     }
 
     h1{
@@ -678,12 +745,14 @@ footer i{
         font-size: 2rem;
         background-color: transparent;
         padding: 1rem;
+        border-radius: 3rem;
     }
 
     #about{
         display: grid;
         grid-template-columns: 1fr 2fr;;
         gap: 1rem;
+        padding: 1rem;
     }
 
     #about div{
