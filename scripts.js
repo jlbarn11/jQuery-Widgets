@@ -1,27 +1,40 @@
-//for scrolling effects from the ScrollMagic Plugin jQuery UI
-// init controller
-var controller = new ScrollMagic.Controller();
-
-// create a scene
-new ScrollMagic.Scene({
-	duration: 100, // the scene should last for a scroll distance of 100px
-	offset: 50, // start this scene after scrolling for 50px
-})
-	.setPin('#my-sticky-element') // pins the element for the the scene's duration
-	.addTo(controller); // assign the scene to the controller
-
-
 //creates jQuery elements on page load
 $( function() {
   //adds the accordion styles/jQuery to the page
   $( "#jobHistory" ).accordion();
+
   //create the tabs in the portfolio section
-  $( "#portfolio" ).tabs({ heightstyle: "auto" }).addClass( "ui-tabs-vertical ui-helper-clearfix" );
+  $( "#portfolio" ).tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
     $( "#portfolio li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
+
   //customize the radio buttons in the form with jQuery
   $( "input[type=radio]" ).checkboxradio({
     icon: false
   });
+
+  //for scrolling effects from the ScrollMagic Plugin jQuery UI
+  // init controller
+  let controller = new ScrollMagic.Controller({
+    globalSceneOptions: {
+      triggerHook: 'onLeave',
+      duration: "100%"
+    }
+  });
+
+  //if we're on a desktop width screen, add the scroll magic plugin functionality
+  if(window.innerWidth > 1000){
+    //get all of the outer sections in the main
+    let sections = $(".panel");
+    //create a scene for each panel/section
+    for(let i = 0; i < sections.length; i++){
+      new ScrollMagic.Scene({
+        triggerElement: sections[i],
+        duration: 400
+      })
+      .setPin(sections[i], {pushFollowers: false})
+      .addTo(controller);
+    }
+  }
 } );
 
 

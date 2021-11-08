@@ -326,6 +326,7 @@ img{
     width: 95%;
     margin: 2rem auto;
     border: 1px solid var(--dark-green);
+    align-self: self-start;
 }
 
 .dates{
@@ -337,6 +338,10 @@ img{
     border: none;
     letter-spacing: 1px;
     font-weight: 600;
+}
+
+.ui-accordion .ui-accordion-content{
+    padding: 0;
 }
 
 .ui-state-active{
@@ -368,6 +373,15 @@ img{
 .ui-tabs .ui-tabs-nav li{
     border-radius: 2rem;
     margin: 0.5rem 15%;
+}
+
+#work section{
+    padding: 0.5rem;
+}
+
+#work p{
+    padding: 0;
+    margin-bottom: 0;
 }
 
 #play{
@@ -440,6 +454,15 @@ form{
     font-family: var(--fonts);
 }
 
+fieldset{
+    width: 280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    justify-items: center;
+}
+
 legend{
     font-weight: bold;
     font-size: 1.5rem;
@@ -450,7 +473,7 @@ legend{
 .ui-widget{
     font-family: var(--fonts);
     font-weight: 600;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     border-radius: 2rem;
     box-shadow: var(--small-shadow);
     background-color: var(--white);
@@ -640,6 +663,7 @@ footer i{
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
         align-items: center;
+        padding: 0;
     }
 
     .ui-tabs .ui-tabs-panel h3{
@@ -672,10 +696,8 @@ footer i{
     }
 
     fieldset{
-        display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        gap: 1rem;
-        width: 80%;
+        width: 100%;
         margin: 1rem auto;
     }
 
@@ -748,6 +770,20 @@ footer i{
         border-radius: 3rem;
     }
 
+    .ui-accordion .ui-accordion-content{
+        padding: 1rem 2.2rem;
+    }
+
+    /* styles to help with the scrolling plugin */
+    #about, #work, #play{
+        margin-bottom: 80rem;
+        background-color: #fff;
+        background-image:
+            linear-gradient(90deg, transparent 79px, var(--light-gray) 79px, var(--light-gray) 81px, transparent 81px),
+            linear-gradient(#eee .1em, transparent .1em);
+        background-size: 100% 1.2em;
+    }
+
     #about{
         display: grid;
         grid-template-columns: 1fr 2fr;;
@@ -757,6 +793,20 @@ footer i{
 
     #about div{
         display: block;
+    }
+
+    #work, #play{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .ui-tabs .ui-tabs-panel{
+        padding: 1rem 1.4rem;
+    }
+
+    fieldset{
+        width: 80%;
     }
 
     legend{
