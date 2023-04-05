@@ -1,10 +1,17 @@
 //creates jQuery elements on page load
 $( function() {
+  // this iife updates the copyright year in the footer
+  (function(){
+    let now = new Date();
+    let span = document.querySelector("footer span");
+    span.innerHTML = now.getFullYear();
+  })();
+
   //adds the accordion styles/jQuery to the page
   $( "#jobHistory" ).accordion();
 
   //create the tabs in the portfolio section
-  $( "#portfolio" ).tabs({ heightStyle: "content" }).addClass( "ui-tabs-vertical ui-helper-clearfix" );
+  $( "#portfolio" ).tabs({ heightStyle: "auto" });
     $( "#portfolio li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
 
   //customize the radio buttons in the form with jQuery
@@ -68,9 +75,12 @@ $( function() {
         green = $( "#green" ).slider( "value" ),
         blue = $( "#blue" ).slider( "value" ),
         hex = hexFromRGB( red, green, blue );
+      // console.log('refreshSwatch color: ', '#' + hex);
+      // also add the hex code to the swatch span
+      $("#swatch-name").html("#" + hex);
       $( "#swatch" ).css( "background-color", "#" + hex );
     }
- 
+
     //creates the sliders
     $( "#red, #green, #blue" ).slider({
       orientation: "horizontal",
@@ -89,15 +99,15 @@ $( function() {
         e.preventDefault();
         //figure out which of the colors the user wants to change
         let currentColor = $("input[type=radio]:checked").attr('id');
-        console.log(currentColor);
+        // console.log(currentColor);
 
         //convert the current color into one that looks like the variable name int the stylesheet
         let colorToChange = `--${currentColor}`;
-        console.log(colorToChange);
+        // console.log(colorToChange);
         let newColor = `#${hex[0]}${hex[1]}${hex[2]}`;
-        console.log(newColor);
+        // console.log(newColor);
 
-        //use hex value chosen by the user for the color, and set it in the root of the CSS
+        //use hex value chosen by the user for the color, and set it on the root element we saved above
         root.style.setProperty(colorToChange, newColor);
     });
 } );
