@@ -609,8 +609,8 @@ span:focus-visible, #changeColor:focus, header a:focus-visible, #about a:focus-v
     background-color: var(--white);
     padding: 0.5rem 1rem;
     border-radius: 2rem;
-    font-weight: bold;
     font-size: 1.2rem;
+    font-weight: 600;
     letter-spacing: 1px;
     box-shadow: var(--small-shadow);
 }
@@ -727,7 +727,8 @@ footer i{
     }
 
     header svg{
-        width: 80%;
+        min-width: 200px;
+        max-width: 300px;
     }
 
     header p{
@@ -831,8 +832,6 @@ footer i{
     }
 
     header svg{
-        min-width: 200px;
-        max-width: 300px;
         padding: 0;
     }
 
